@@ -1,0 +1,12 @@
+<aura:component description="lookupS">
+    <aura:handler value="{!this}" action="{!c.getAllAccounts}" name="init"/>
+    <aura:attribute name="allAccounts" type="String[]"/>
+<aura:attribute name="cnt" type="Contact"/>
+    <!--<lightning:select label="Change account" name="{!v.contactik.Id}" value="{!v.contactik.Account}"-->
+                      <!--onchange="{!c.unAttachAccount}" class="slds-label">-->
+        <!--<aura:iteration items="{!v.allAccounts}" var="contact2">-->
+            <!--<option value="{!contact2.Name}">{!contact2}</option>-->
+        <!--</aura:iteration>-->
+    <!--</lightning:select>-->
+    {!v.cnt.Id}
+</aura:component>

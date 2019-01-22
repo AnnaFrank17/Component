@@ -1,0 +1,40 @@
+<aura:component description="DataRow" controller="FindContact">
+    <aura:attribute name="contact" type="Contact"/>
+    <aura:attribute name="isSelect" type="Boolean"/>
+    <aura:handler value="{!this}" action="{!c.init}" name="init"/>
+
+    <td data-label="First Name" scope="row" onclick="{!c.showInput}" data-record="FirstNameInput">
+        <aura:if isTrue="{!v.isSelect.FirstNameInput}">
+            <lightning:input name="FitstName" value="{!v.contact.FirstName}" label="First Name"
+                             onblur="{!c.saveAndClose}"/>
+            <aura:set attribute="else">
+                {!v.contact.FirstName}
+            </aura:set>
+        </aura:if>
+    </td>
+    <td data-label="Last Name" scope="row" data-record="LastNameInput" onclick="{!c.showInput}">
+        <aura:if isTrue="{!v.isSelect.LastNameInput}">
+            <lightning:input name="LastName" value="{!v.contact.LastName}" label="Last Name"
+                             onblur="{!c.saveAndClose}"/>
+            <aura:set attribute="else">
+                {!v.contact.LastName}
+            </aura:set>
+        </aura:if>
+    </td>
+    <td data-label="Title" scope="row" onclick="{!c.showInput}" data-record="Title">
+        <aura:if isTrue="{!v.isSelect.Title}">
+            <lightning:input name="Title" value="{!v.contact.Title}" label="Title" onblur="{!c.saveAndClose}"/>
+            <aura:set attribute="else">
+                {!v.contact.Title}
+            </aura:set>
+        </aura:if>
+    </td>
+    <td data-label="Email" scope="row" onclick="{!c.showInput}" data-record="Email">
+        <aura:if isTrue="{!v.isSelect.Email}">
+            <lightning:input name="Email" value="{!v.contact.Email}" label="Email" onblur="{!c.saveAndClose}"/>
+            <aura:set attribute="else">
+                {!v.contact.Email}
+            </aura:set>
+        </aura:if>
+    </td>
+</aura:component>
