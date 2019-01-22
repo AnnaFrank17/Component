@@ -1,0 +1,136 @@
+({
+    getAllAccountsForLookup: function (component) {
+        var action = component.get("c.getAllAccountsForContact");
+        action.setCallback(this, function (response) {
+            var findingAccounts = response.getReturnValue();
+            if (response.getState() === "SUCCESS" && !$A.util.isEmpty(findingAccounts)) {
+                component.set("v.allAccounts", findingAccounts);
+            }
+        });
+        $A.enqueueAction(action);
+    },
+
+    attachContactToAccount: function (component, contact, accountName, event) {
+        var action = component.get("c.editAttach");
+        action.setParams({
+            contactId: contact,
+            accountName: accountName
+        });
+        action.setCallback(this, function (response) {
+            if (response.getState() === "SUCCESS") {
+                this.findAllContacts(component, event);
+            } else {
+                alert('FUUUUUUUUUCK');
+            }
+        });
+        $A.enqueueAction(action);
+    },
+
+    updateSearchTerm: function (component, searchTerm) {
+        // Cleanup new search term
+        const updatedSearchTerm = searchTerm.trim().replace(/\*/g, '').toLowerCase();
+
+        // Compare clean new search term with current one and abort if identical
+        const curSearchTerm = component.get('v.searchTerm');
+        if (curSearchTerm === updatedSearchTerm) {
+            return;
+        }
+
+        // Update search term
+        component.set('v.searchTerm', updatedSearchTerm);
+
+        // Ignore search terms that are too small
+        if (updatedSearchTerm.length < 2) {
+            component.set('v.searchResults', []);
+            return;
+        }
+
+        // Apply search throttling (prevents search if user is still typing)
+        let searchTimeout = component.get('v.searchThrottlingTimeout');
+        if (searchTimeout) {
+            clearTimeout(searchTimeout);
+        }
+        searchTimeout = window.setTimeout(
+            $A.getCallback(function () {
+                // Send search event if it long enougth
+                const searchTerm = component.get('v.searchTerm');
+                if (searchTerm.length >= 2) {
+                    const searchEvent = component.getEvent('onSearch');
+                    searchEvent.fire();
+                }
+                component.set('v.searchThrottlingTimeout', null);
+            }),
+            300
+        );
+        component.set('v.searchThrottlingTimeout', searchTimeout);
+    },
+
+    selectResult: function (component, recordId) {
+        // Save selection
+        const searchResults = component.get('v.searchResults');
+        const selectedResult = searchResults.filter(function (result) {
+            return result.id === recordId;
+        });
+        if (selectedResult.length > 0) {
+            const selection = component.get('v.selection');
+            selection.push(selectedResult[0]);
+            component.set('v.selection', selection);
+        }
+        // Reset search
+        const searchInput = component.find('searchInput');
+        searchInput.getElement().value = '';
+        component.set('v.searchTerm', '');
+        component.set('v.searchResults', []);
+    },
+
+    getSelectedIds: function (component) {
+        const selection = component.get('v.selection');
+        return selection.map(function (element) {
+            return element.id;
+        });
+    },
+
+    removeSelectedItem: function (component, removedItemId) {
+        const selection = component.get('v.selection');
+        const updatedSelection = selection.filter(function (item) {
+            return item.id !== removedItemId;
+        });
+        component.set('v.selection', updatedSelection);
+    },
+
+    clearSelection: function (component, itemId) {
+        component.set('v.selection', []);
+    },
+
+    isSelectionAllowed: function (component) {
+        return component.get('v.isMultiEntry') || component.get('v.selection').length === 0;
+    },
+
+    toggleSearchSpinner: function (component) {
+        const spinner = component.find('spinner');
+        const searchIcon = component.find('search-icon');
+
+        $A.util.toggleClass(spinner, 'slds-hide');
+        $A.util.toggleClass(searchIcon, 'slds-hide');
+    },
+
+    findAllContacts: function (component, event) {
+
+        var action = component.get("c.getContacts");
+        component.set("v.Columns", [
+            {label: "First Name", fieldName: "FirstName", type: "text"},
+            {label: "Last Name", fieldName: "LastName", type: "text"},
+            {label: "Title", fieldName: "Title", type: "text"},
+            {label: "Email", fieldName: "Email", type: "Email"},
+            {label: "Account", fieldName: "Name", type: "Name"}
+        ]);
+
+        action.setParams({
+            recordId: component.get("v.recordId")
+        });
+        action.setCallback(this, function (data) {
+            component.set("v.Contacts", data.getReturnValue());
+        });
+        $A.enqueueAction(action);
+    },
+})

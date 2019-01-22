@@ -1,0 +1,61 @@
+<aura:component controller="FindContact" implements="flexipage:availableForRecordHome,force:hasRecordId"
+                access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.findData}"/>
+    <aura:attribute name="selectedLookUpRecord" type="Object" default="{}"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="contactId" type="Id"/>
+    <aura:attribute name="Account" type="Account"/>
+    <aura:attribute name="Contacts" type="Contact[]"/>
+    <aura:attribute name="allAccounts" type="String[]"/>
+    <aura:attribute name="listObj" type="Object[]"/>
+
+
+    <aura:attribute name="Columns" type="List"/>
+    <aura:attribute name="defaultAccount" type="String"/>
+    <force:recordData aura:id="accountRecord"
+                      recordId="{!v.recordId}"
+                      targetFields="{!v.Account}"
+                      layoutType="FULL"
+                      mode="EDIT"
+    />
+    <aura:handler value="{!this}" action="{!c.getAllAccounts}" name="init"/>
+
+    <lightning:card iconName="standard:contact" title="{! 'Contact List for ' + v.Account.Name}">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="First Name">First Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Last Name">Last Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Title">Title</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Email">Email</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Account">Account</div>
+                </th>
+            </tr>
+            </thead>
+            <aura:iteration items="{!v.Contacts}" var="item">
+                <tbody>
+                <tr class="slds-hint-parent">
+                    <c:DataRow contact="{!item}"/>
+                    <td data-label="Account">
+                        <lightning:select label="Change account" name="{!item.Id}" value="{!item.Account}"
+                                          onchange="{!c.unAttachAccount}" class="slds-label">
+                            <aura:iteration items="{!v.allAccounts}" var="item2">
+                                <option value="{!item2.Name}">{!item2}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </td>
+                </tr>
+                </tbody>
+            </aura:iteration>
+        </table>
+    </lightning:card>
+</aura:component>
