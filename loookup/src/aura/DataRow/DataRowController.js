@@ -2,6 +2,7 @@
     showInput: function (component, event, helper) {
         var isSelect = component.get('v.isSelect');
         //    event.getSource().getElement().focus();
+
         // window.setTimeout(
         //     $A.getCallback(() => {
         //     //let inputs = component.find('validatableField');
@@ -12,8 +13,8 @@
         //
 
         var inputSelected = isSelect[event.currentTarget.dataset.record];
+        
         console.log("QWERTYJYTREWERTYUIKYTRERTYUI" + inputSelected);
-        s
         isSelect[event.currentTarget.dataset.record] = !inputSelected ? true : inputSelected;
         component.set('v.isSelect', isSelect);
     },
@@ -36,6 +37,7 @@
         });
         $A.enqueueAction(action);
         component.set('v.isSelect', false);
+
     },
 
     init: function (component, event, helper) {
@@ -46,4 +48,5 @@
             'Email': false
         });
     },
+
 })
