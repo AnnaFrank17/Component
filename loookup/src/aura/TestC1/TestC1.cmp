@@ -7,9 +7,6 @@
     <aura:attribute name="Account" type="Account"/>
     <aura:attribute name="Contacts" type="Contact[]"/>
     <aura:attribute name="allAccounts" type="String[]"/>
-    <aura:attribute name="listObj" type="Object[]"/>
-
-
     <aura:attribute name="Columns" type="List"/>
     <aura:attribute name="defaultAccount" type="String"/>
     <force:recordData aura:id="accountRecord"

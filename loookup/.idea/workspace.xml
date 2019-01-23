@@ -17,7 +17,7 @@
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/aura/DataRow/DataRowHelper.js">
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
@@ -33,7 +33,7 @@
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/aura/TestC1/TestC1.cmp">
           <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
           <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
@@ -103,6 +103,7 @@
       <find>recordId</find>
       <find>getco</find>
       <find>eve</find>
+      <find>Columns</find>
     </findStrings>
     <replaceStrings>
       <replace>contact</replace>
@@ -131,9 +132,9 @@
         <option value="$PROJECT_DIR$/src/aura/DataRow/DataRow.cmp" />
         <option value="$PROJECT_DIR$/src/aura/TestC1/TestC1Controller.js" />
         <option value="$PROJECT_DIR$/src/aura/TestC1/TestC1Helper.js" />
-        <option value="$PROJECT_DIR$/src/aura/TestC1/TestC1.cmp" />
         <option value="$PROJECT_DIR$/src/classes/FindContact.cls" />
         <option value="$PROJECT_DIR$/src/aura/DataRow/DataRowController.js" />
+        <option value="$PROJECT_DIR$/src/aura/TestC1/TestC1.cmp" />
       </list>
     </option>
   </component>
@@ -164,7 +165,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="AURA/DATAROW" value="1548233775286" />
+                      <entry key="AURA/DATAROW" value="1548233822660" />
                       <entry key="AURA/LOOKUPS" value="1548084056000" />
                       <entry key="AURA/TESTC1" value="1548171126148" />
                       <entry key="CLASSES/FINDCONTACT.CLS" value="1548171224192" />
@@ -1065,7 +1066,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548233820319" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548234754724" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -1093,12 +1094,12 @@
       <option name="presentableId" value="Default" />
       <updated>1547725025470</updated>
       <workItem from="1547725031261" duration="90000" />
-      <workItem from="1547725124369" duration="86607000" />
+      <workItem from="1547725124369" duration="87533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86697000" />
+    <option name="totallyTimeSpent" value="87623000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1113,7 +1114,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1131,12 +1132,12 @@
       <window_info anchor="bottom" id="Log Viewer" order="7" weight="0.29035753" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.23076923" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.20151679" />
-      <window_info anchor="bottom" id="Anonymous Apex" order="12" weight="0.30877572" />
+      <window_info anchor="bottom" id="Anonymous Apex" order="12" sideWeight="0.586887" weight="0.30877572" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="bottom" id="SOQL Query" order="15" weight="0.23076923" />
+      <window_info active="true" anchor="bottom" id="SOQL Query" order="15" sideWeight="0.49946696" visible="true" weight="0.23076923" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1265,33 +1266,11 @@
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/aura/TestC1/TestC1Helper.js">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aura/TestC1/TestC1Controller.js">
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aura/TestC1/TestC1.cmp">
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/DataRow/DataRowController.js">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/classes/FindContact.cls">
-      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
-      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/aura/DataRow/DataRow.cmp">
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
@@ -1302,6 +1281,28 @@
     <entry file="file://$PROJECT_DIR$/src/aura/DataRow/DataRowHelper.js">
       <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/classes/FindContact.cls">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.MetadataFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aura/TestC1/TestC1Controller.js">
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aura/TestC1/TestC1Helper.js">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aura/TestC1/TestC1.cmp">
+      <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningControllerFileEditorProvider" />
+      <provider selected="true" editor-type-id="com.illuminatedcloud.intellij.editor.LightningMarkupFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.MetaXmlFileEditorProvider" />
       <provider editor-type-id="com.illuminatedcloud.intellij.editor.LightningHelperFileEditorProvider" />
     </entry>

@@ -13,7 +13,7 @@
         //
 
         var inputSelected = isSelect[event.currentTarget.dataset.record];
-        
+
         console.log("QWERTYJYTREWERTYUIKYTRERTYUI" + inputSelected);
         isSelect[event.currentTarget.dataset.record] = !inputSelected ? true : inputSelected;
         component.set('v.isSelect', isSelect);
